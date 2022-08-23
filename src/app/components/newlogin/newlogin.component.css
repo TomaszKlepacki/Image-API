@@ -1,0 +1,52 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.toolbar-login{
+  border-radius: 0px 50px 0px 0px;
+}
+
+.mat-card{
+ border-radius: 0px 50px 0 50px;
+ box-shadow: 20px 19px 25px -7px rgba(26, 26, 33, 1);
+}
+
+.mat-icon{
+  padding: 2px;
+  margin-right: 10px;
+  font-size: 14px;
+  color:"primary";
+}
+
+.hide{
+  
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.main-div mat-card{
+  padding: 0px;
+}
+
+.login-form{
+  padding: 20px;
+}
+
+.login-button{
+  width: 30%;
+ margin: 0 auto;
+  text-transform:uppercase;
+}
+
+p{
+  padding-bottom:0px;
+}
+a{
+  text-transform:uppercase;
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
