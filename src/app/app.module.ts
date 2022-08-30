@@ -88,7 +88,7 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatIconModule,
     FlexLayoutModule,
-    MatCardModule
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
