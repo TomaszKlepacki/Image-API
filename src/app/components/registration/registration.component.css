@@ -36,8 +36,8 @@
     padding: 20px;
   }
   
-  .login-button{
-    width: 30%;
+  .registration-button{
+   
    margin: 0 auto;
     text-transform:uppercase;
   }
@@ -46,7 +46,12 @@
     padding-bottom:0px;
   }
   a{
-    text-transform:uppercase;
+
     padding-top: 0px;
     padding-bottom: 10px;
+  }
+
+  .btn-primary{
+    background-color: #3F51B6;
+    border-color: #3F51B6;
   }
