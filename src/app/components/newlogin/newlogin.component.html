@@ -2,21 +2,25 @@
 <div fxLayoutAlign="center center" fxFlexFill class="main-div" >
 <mat-card fxFlex="25%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="70%" fxFlex.xs="100%">
 <mat-toolbar class="toolbar-login" color="primary">Login</mat-toolbar>
-  <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+  <form (ngSubmit)="onSubmit()" fxLayoutAlign="stretch" fxLayout="column" class="login-form">
     
     <mat-form-field appearance="fill">
       <mat-label><mat-icon>person</mat-icon>Enter your email</mat-label>
-      <input matInput placeholder="pat@example.com" [formControl]="email" required>
+      <input matInput id="username" name="username" [(ngModel)]="username" placeholder="pat@example.com" [formControl]="email" required>
       <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
   
     <mat-form-field appearance="fill" >
       <mat-label><mat-icon>lock</mat-icon>Password</mat-label>
-      <input type="password" matInput [type]="hide ? 'password' : 'text'">
+      <input id="floatingPassword" type="password" name="password" [(ngModel)]="password" matInput [type]="hide ? 'password' : 'text'" required>
       <button class="hide" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
+    <div *ngIf="responseError" class="alert alert-danger mb-3" role="alert">
+      {{responseErrorMessage}}
+    </div>
+    <app-spinner></app-spinner>
     <button  class="login-button" mat-raised-button color="primary" type="submit">Login</button>
     <div class="row mb-4">
       <div class="col d-flex justify-content-center">

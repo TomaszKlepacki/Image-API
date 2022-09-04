@@ -2,22 +2,34 @@
 <div fxLayoutAlign="center center" fxFlexFill class="main-div" >
   <mat-card fxFlex="25%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="70%" fxFlex.xs="100%">
   <mat-toolbar class="toolbar-login" color="primary">Registration</mat-toolbar>
-    <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+    <form (ngSubmit)="onSubmit()" *ngIf="!successfullRegistration"  fxLayoutAlign="stretch" fxLayout="column" class="login-form" >
       
+
       <mat-form-field appearance="fill">
-        <mat-label><mat-icon>person</mat-icon>Enter your email</mat-label>
-        <input matInput placeholder="pat@example.com" [formControl]="email" required>
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        <mat-label><mat-icon>person</mat-icon>Username</mat-label>
+        <input matInput  id="username" type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" placeholder="Example user"  required>
+        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+        
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label><mat-icon>mail</mat-icon>Enter your email</mat-label>
+        <input matInput  id="floatingInput" type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"  placeholder="pat@example.com"  required>
+        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
       </mat-form-field>
     
       <mat-form-field appearance="fill" >
         <mat-label><mat-icon>lock</mat-icon>Password</mat-label>
-        <input type="password" matInput [type]="hide ? 'password' : 'text'">
+        <input  id="floatingPassword" type="password" [(ngModel)]="password"  [ngModelOptions]="{standalone: true}" placeholder="Password" matInput [type]="hide ? 'password' : 'text'" required>
         <button class="hide" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
-      <button  class="registration-button" mat-raised-button color="primary" type="submit">Registration</button>
+      <div *ngIf="error" class="alert alert-danger mb-3" role="alert">
+        {{errorResponse}}
+      </div>
+      <app-spinner></app-spinner>
+      <button  class="registration-button" mat-raised-button color="primary" id="regidter" type="submit" name="registerSubmit">Registration</button>
  
     <!-- Register buttons -->
     <div class="text-center pt-3">
@@ -29,5 +41,8 @@
   
   </mat-card>
   </div>
-  
+  <div *ngIf="successfullRegistration" class="alert alert-success mb-3" role="alert">
+    Registration is successfull. Go to your email to verify the registration.
+    <!--TODO DELETE--><p>{{url}}</p>
+  </div>
   <!-- class="example-full-width" appearance="fill" -->
