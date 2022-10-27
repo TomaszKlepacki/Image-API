@@ -37,7 +37,6 @@
 }
 
 .login-button{
-  width: 30%;
  margin: 0 auto;
   text-transform:uppercase;
 }
@@ -49,4 +48,9 @@ a{
   text-transform:uppercase;
   padding-top: 0px;
   padding-bottom: 10px;
+}
+
+.btn-primary{
+  background-color: #3F51B6;
+  border-color: #3F51B6;
 }

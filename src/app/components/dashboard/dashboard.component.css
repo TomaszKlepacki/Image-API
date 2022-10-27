@@ -1,0 +1,69 @@
+
+  body {
+    background-image: linear-gradient(180deg, #eee, #fff 100px, #fff);
+    
+  }
+
+
+  h1{
+    text-align:center;
+  }
+
+.card {
+    background-color: #FFF;
+    width: 500px;
+    border-radius: .5rem;
+    box-shadow: 0px 5px 20px rgba(49, 104, 146, .25);
+}
+
+.card-body {
+    padding: 3.5rem 1.25rem;   
+}
+
+.card-title {
+    color: #1689ff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: .25rem;
+}
+
+.card-subtitle {
+    color: #777;
+    font-weight: 500;
+    text-align: center;
+}
+
+.file-upload {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4rem 1.5rem;
+    margin-top: 2rem;
+    border: 3px dashed #9dceff;
+    border-radius: .5rem;
+    transition: background-color .25s ease-out;
+}
+
+.file-upload:hover{
+    background-color: #dbedff;
+}
+
+.file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.icon {
+    width: 75px;
+    margin-bottom: 1rem;
+}
+
